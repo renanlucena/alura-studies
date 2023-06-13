@@ -15,7 +15,7 @@ export default function Lista() {
         <h2>Estudos do dia</h2>
         <ul>
             {tarefas.map((tarefa, index) =>(
-                <li>
+                <li key={index}>
                 <h3>
                     {tarefa.tarefa}
                 </h3>
