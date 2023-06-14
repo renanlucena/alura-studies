@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from "./style.module.scss";
+import styles from "./Botao.module.scss";
 
 export default class Botao extends React.Component{
     render(){
