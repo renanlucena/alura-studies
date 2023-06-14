@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import styles from "./Botao.module.scss";
-
-export default class Botao extends React.Component{
-    render(){
+interface BotaoProps{
+    children: ReactElement | string
+}
+export default function Time({children}:BotaoProps){
         return(
             <button className={styles.botao}>
-                Botao
+                {children}
             </button>
         )
     }
-}
+
