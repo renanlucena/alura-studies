@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from "./Cronometro.module.scss";
 import Botao from '../Botao'
-import Relogio from './Relogio'
+import Relogio from "./Relogio"
 
 
 export default function Cronometro() {
