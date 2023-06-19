@@ -1,14 +1,18 @@
 import React, { useState } from 'react'
 import Botao from '../Botao'
 import styles from "./Formulario.module.scss";
+import { ITarefa } from '../../types/ITarefa';
+interface FormularioProps{
+    setTarefas: React.Dispatch<React.SetStateAction<ITarefa[]>>
+}
 
-export default function Formulario() {
+export default function Formulario({setTarefas}: FormularioProps) {
     const [tarefa, setTarefa] = useState("");
     const [tempo, setTempo] = useState("00:00:00");
 
     function adicionarTarefa(e: React.FormEvent){
         e.preventDefault();
-        console.log('state: ', tarefa)
+        setTarefas(tarefasAntigas => [...tarefasAntigas, {tarefa, tempo}]);
     }
     return (
         <form className={styles.novaTarefa} onSubmit={adicionarTarefa}>
@@ -44,7 +48,7 @@ export default function Formulario() {
                 />
 
             </div>
-            <Botao>Adicionar</Botao>
+            <Botao type="submit">Adicionar</Botao>
 
         </form>
     )
