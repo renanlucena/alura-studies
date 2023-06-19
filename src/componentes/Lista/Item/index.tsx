@@ -1,12 +1,8 @@
 import React from 'react'
 import styles from "./Item.module.scss";
+import { ITarefa } from '../../../types/ITarefa';
 
-interface ItemProps{
-    tarefa: string
-    tempo: string
-}
-
-export default function Item({tarefa, tempo} :ItemProps) {
+export default function Item({tarefa, tempo, selecionado, completado, id} :ITarefa ) {
   return (
     <li className={styles.item}>
     <h3>
