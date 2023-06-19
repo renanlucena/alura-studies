@@ -13,6 +13,8 @@ export default function Formulario({setTarefas}: FormularioProps) {
     function adicionarTarefa(e: React.FormEvent){
         e.preventDefault();
         setTarefas(tarefasAntigas => [...tarefasAntigas, {tarefa, tempo}]);
+        setTarefa("");
+        setTempo("00:00:00");
     }
     return (
         <form className={styles.novaTarefa} onSubmit={adicionarTarefa}>
