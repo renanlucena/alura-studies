@@ -16,7 +16,11 @@ export default function Cronometro({selecionado} :CronometroProps) {
     useEffect(() =>{
         if(selecionado?.tempo)
             setTempo(tempoParaSegundos(selecionado.tempo))
-    },[selecionado])
+    },[selecionado]);
+
+    function regressiva(contador: number = 0){
+
+    }
 
     return (
         <div className={styles.cronometro}>
@@ -27,7 +31,7 @@ export default function Cronometro({selecionado} :CronometroProps) {
                 <Relogio tempo={tempo} />
 
             </div>
-            <Botao>
+            <Botao onClick={() => regressiva(tempo)}>
                 Começar!
             </Botao>
         </div>
